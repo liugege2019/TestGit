@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+  <struts>
+  <package name="hellodemo" extends="struts-default" namespace="/">
+    <!-- 全局结束页面配置 (代替多个action中的result标签)-->
+    <global-results>
+      <result name="success">/hello.jsp</result>
+     </global-results>
+     <!--局部页面配置 要是页面中有全局还有局部的，最终以局部为主 --> 
+     <action name="book" class="cn.itcast.action.BookAction">
+      <result name="success">/book.jsp</result>
+     </action>
+     <action name="order" class="cn.itcast.action.OrderAction">
+      <!--  <result name="success">/hello.jsp</result> -->
+     </action>
+   </package> 
+   <!-- 获取表单数据 -->
+   <package name="demo"  extends="struts-default" namespace="/">
+    <!-- <action name="form1" class="cn.itcast.action.From1Action"> -->
+    <action name="form2" class="cn.itcast.action.From1Action2">
+    <!--<action name="form3" class="cn.itcast.action.From1Action3"> -->
+    <!--<action name="form4" class="cn.itcast.action.From1Action4"> -->
+    <!-- <action name="form5" class="cn.itcast.action.From1Action5"> -->
+     </action>
+   </package>
+  </struts>
